@@ -1373,7 +1373,7 @@
     if (frameSize) {
       var allocStack = new AssignmentExpression(frame.realSP(), "-=", new Literal(frameSize));
       var spDecl = new VariableDeclarator(frame.SP(), allocStack);
-      code.push(new VariableDeclaration("const", [spDecl]));
+      code.push(new VariableDeclaration("var", [spDecl]));
     }
 
     var cachedLocals = frame.cachedLocals;
@@ -1393,7 +1393,7 @@
     }
 
     if (constants.length) {
-      code.unshift(new VariableDeclaration("const", constants));
+      code.unshift(new VariableDeclaration("var", constants));
     }
 
     if (node.parameters) {
