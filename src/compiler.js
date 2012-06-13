@@ -1586,7 +1586,7 @@
       } else {
         mdecl = new VariableDeclarator(cachedMEMORY, createRequire("memory"));
       }
-      body.push(new VariableDeclaration("const", [mdecl]));
+      //body.push(new VariableDeclaration("const", [mdecl]));
     }
 
     if (bare) {
